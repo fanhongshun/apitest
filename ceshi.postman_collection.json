@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "1d8cccaa-9631-4163-9ef9-4ed923bb8dbf",
+		"name": "ceshi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://10.255.255.93:8102/blacklistAPI",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n                \"custid\": \"{{custidnum}}\",\r\n                \"dd_account\": \"ning@dd\",\r\n                \"receiver_mobile_phone\": \"12345662432\",\r\n                \"ip\": \"10.255.125.154\",\r\n                \"perm_id\": \"\",\r\n                \"device_id\":\"\",\r\n                \"sourceID\": \"\",\r\n                \"shopId\": -1,\r\n                \"shopType\": 0\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.255.255.93:8102/blacklistAPI",
+					"protocol": "http",
+					"host": [
+						"10",
+						"255",
+						"255",
+						"93"
+					],
+					"port": "8102",
+					"path": [
+						"blacklistAPI"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
